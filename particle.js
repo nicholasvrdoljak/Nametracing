@@ -12,12 +12,12 @@ class Particle {
   }
 
   look(walls) {
-    for (let i = 0; i < this.rays.length; i++) {
-      const ray = this.rays[i];
+    for (let ray of this.rays) {
       let closest = null;
       let record = Infinity;
+
       for (let wall of walls) {
-        const pt = ray.cast(wall);
+        const pt = ray.cast(wall, this.pos);
         if (pt) {
           const d = p5.Vector.dist(this.pos, pt);
           if (d < record) {
@@ -37,7 +37,7 @@ class Particle {
 
   show() {
     fill(255);
-    ellipse(this.pos.x, this.pos.y, 4);
+    ellipse(this.pos.x, this.pos.y, 0);
     for (let ray of this.rays) {
       ray.show();
     }
