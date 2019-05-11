@@ -13,14 +13,14 @@ class Particle {
   }
 
   update(x, y) {
-    // this.pos.set(x, y);
+    this.pos.set(x, y);
     
-    if(this.pos.x >= 400){
-      this.direction = -1;
-    } else if (this.pos.x <= 50){
-      this.direction = 1;
-    }
-    this.pos.set(this.pos.x + (this.direction * 20), this.pos.y)
+    // if(this.pos.x >= 400){
+    //   this.direction = -1;
+    // } else if (this.pos.x <= 50){
+    //   this.direction = 1;
+    // }
+    // this.pos.set(this.pos.x + (this.direction * 20), this.pos.y)
   }
 
   look(walls) {

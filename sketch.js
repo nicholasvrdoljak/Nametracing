@@ -1,13 +1,13 @@
 let walls = [];
 let ray;
 let particle;
-// let xoff = 0;
-// let yoff = 10000;
+let xoff = 0;
+let yoff = 10000;
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   
-  let brightness = 0;
+  let brightness = 250;
 
   //N
   walls.push(new Boundary(100, 100, 100, 200, brightness));
@@ -39,11 +39,17 @@ function setup() {
   walls.push(new Boundary(320, 100, 320, 200, brightness));//  |
   walls.push(new Boundary(320, 100, 340, 100, brightness));//  -
   walls.push(new Boundary(340, 100, 340, 150, brightness));//  |
-  walls.push(new Boundary(340, 150, 360, 100, brightness));//  /
-  walls.push(new Boundary(360, 100, 370, 110, brightness));//  \
-  walls.push(new Boundary(370, 110, 340, 180, brightness));//  /
-  walls.push(new Boundary(340, 180, 380, 190, brightness));//  \
-  walls.push(new Boundary(380, 190, 320, 200, brightness));//  _
+
+  walls.push(new Boundary(340, 150, 360, 120, brightness));//  /
+  walls.push(new Boundary(360, 120, 370, 130, brightness));//  \
+  walls.push(new Boundary(370, 130, 340, 170, brightness));//  /
+
+  walls.push(new Boundary(340, 170, 370, 190, brightness));//  \
+  walls.push(new Boundary(370, 190, 360, 200, brightness));//  /
+
+  walls.push(new Boundary(360, 200, 340, 185, brightness));//  \
+  walls.push(new Boundary(340, 185, 340, 200, brightness));//  |
+  walls.push(new Boundary(340, 200, 320, 200, brightness));//  _
 
   //Walls
   walls.push(new Boundary(0, 0, width, 0, brightness));
@@ -69,6 +75,6 @@ function draw() {
   // particle2.look(walls);
 
 
-  // xoff += 0.01;
-  // yoff += 0.01;
+  xoff += 0.01;
+  yoff += 0.01;
 }
